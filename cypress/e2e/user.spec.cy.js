@@ -2,6 +2,22 @@ import userData from '../fixtures/users/userData.json'
 
 describe('Orange HRM Tests', () => {
 
+  const selectorsList = {
+    usernameInput: '[name="username"]',
+    passwordInput: '[name="password"]',
+    loginButton: '[type="submit"]',
+    wrongCredentialAlert: '[role="alert"]',
+    sectionTitleTopBar: '.oxd-topbar-header-breadcrumb-module',
+    dashboardGrid: '.orangehrm-dashboard-grid',
+    myInfoButton: '[href="/web/index.php/pim/viewMyDetails"]',
+    firstNameField: '[name="firstName"]',
+    lastNameField: '[name="lastName"]',
+    genericField: '.oxd-input',
+    dateField: '[placeholder="yyyy-dd-mm"]',
+    dateCloseButton: ".--close",
+    submitButton: '[type="submit"]'
+  }
+
   it.only('User Info Update - Success', () => {
     cy.visit('/auth/login')
     cy.get(selectorsList.usernameInput).type(userData.userSucess.username)
