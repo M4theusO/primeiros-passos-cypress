@@ -15,7 +15,7 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           start: 'npm run dev'
-          build: 'npm run build'
+          build: ''
           
       - uses: actions/upload-artifact@v4
         if: always()
@@ -26,4 +26,3 @@ jobs:
             cypress/screenshots
             cypress/results
           if-no-files-found: ignore
-          
